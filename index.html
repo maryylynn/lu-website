@@ -5,10 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lú - Música y Estilo</title>
   <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700&family=Bebas+Neue&display=swap" rel="stylesheet">
 </head>
 <body>
+
+  <!-- Header -->
   <header>
-    <h1>Lú</h1>
+    <div class="logo">Lú</div>
     <nav>
       <a href="#musica">Música</a>
       <a href="#tienda">Tienda</a>
@@ -17,29 +20,271 @@
     </nav>
   </header>
 
+  <!-- Hero / Portada -->
   <section id="hero">
-    <h2>Música que empodera, estilo que inspira</h2>
-    <button>Escucha mi música</button>
-    <button>Compra mis productos</button>
+    <div class="hero-text">
+      <h1>Música que empodera, estilo que inspira</h1>
+      <div class="buttons">
+        <a href="#musica" class="btn">Escucha mi música</a>
+        <a href="#tienda" class="btn">Compra mis productos</a>
+      </div>
+    </div>
   </section>
 
+  <!-- Música -->
   <section id="musica">
     <h2>Mi Música</h2>
-    <!-- Aquí embeds de YouTube o SoundCloud -->
+    <div class="music-grid">
+      <!-- Reemplaza con tus canciones -->
+      <iframe width="300" height="150" src="https://youtu.be/-cjxxBf5fqc?si=yB4ZNoCesPd1XcUU" frameborder="0" allowfullscreen></iframe>
+      <iframe width="300" height="150" src="https://youtu.be/woNcsQRPqTg?si=uBY1vj1btJTmidzJ" frameborder="0" allowfullscreen></iframe>
+    </div>
   </section>
 
+  <!-- Tienda -->
   <section id="tienda">
     <h2>Tienda</h2>
-    <!-- Productos y enlaces de compra -->
+    <div class="products">
+      <div class="product-card">
+        <img src="assets/polera.jpg" alt="Polera Rock">
+        <h3>Polera Rock</h3>
+        <p>S/. 40</p>
+        <a href="https://wa.me/51977818134" class="btn">Comprar</a>
+      </div>
+      <div class="product-card">
+        <img src="assets/alfajor.jpg" alt="Alfajor de Chocolate">
+        <h3>Alfajor de Chocolate</h3>
+        <p>S/. 4</p>
+        <a href="https://wa.me/51977818134" class="btn">Comprar</a>
+      </div>
+    </div>
   </section>
 
+  <!-- Contacto -->
   <section id="contacto">
     <h2>Contacto</h2>
-    <!-- Redes y formulario -->
+    <p>Redes Sociales:</p>
+    <div class="socials">
+      <a href="https://instagram.com/marylinortegar" target="_blank">Instagram</a>
+      <a href="https://youtube.com/luzmarylin" target="_blank">YouTube</a>
+      <a href="https://m.soundcloud.com/marylin-ortega-701885481" target="_blank">SoundCloud</a>
+    </div>
   </section>
 
+  <!-- Footer -->
   <footer>
     <p>&copy; 2025 Lú. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Orbitron', sans-serif;
+}
+
+body {
+  background-color: #0d0d0d;
+  color: #fff;
+}
+
+/* Header */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 50px;
+  background: rgba(0,0,0,0.8);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+header .logo {
+  font-family: 'Bebas Neue', cursive;
+  font-size: 2em;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff00ff;
+}
+
+header nav a {
+  color: #fff;
+  margin-left: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+header nav a:hover {
+  color: #00ffff;
+  text-shadow: 0 0 10px #00ffff;
+}
+
+/* Hero */
+#hero {
+  height: 100vh;
+  background: radial-gradient(circle, #1a1a1a, #000000);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+#hero::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: repeating-radial-gradient(circle, #ff00ff 0 2px, transparent 2px 10px);
+  animation: rotateBG 20s linear infinite;
+  z-index: 0;
+  opacity: 0.3;
+}
+
+@keyframes rotateBG {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.hero-text {
+  position: relative;
+  z-index: 1;
+}
+
+.hero-text h1 {
+  font-size: 3em;
+  color: #ff00ff;
+  text-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+  margin-bottom: 30px;
+}
+
+.btn {
+  padding: 10px 25px;
+  margin: 0 10px;
+  background: #00ffff;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #ff00ff;
+  color: #fff;
+  transform: scale(1.1);
+}
+
+/* Música */
+#musica {
+  padding: 50px;
+  text-align: center;
+}
+
+#musica h2 {
+  font-size: 2.5em;
+  margin-bottom: 30px;
+  color: #ff00ff;
+}
+
+.music-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Tienda */
+#tienda {
+  padding: 50px;
+  text-align: center;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.product-card {
+  background: #1a1a1a;
+  padding: 20px;
+  border-radius: 10px;
+  width: 200px;
+  box-shadow: 0 0 10px #ff00ff;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: scale(1.05);
+}
+
+.product-card img {
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 10px;
+}
+
+.product-card h3 {
+  color: #00ffff;
+  margin-bottom: 5px;
+
+}
+
+.about {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+.about img {
+  width: 250px;
+  border-radius: 10px;
+  box-shadow: 0 0 15px #ff00ff;
+}
+
+.about p {
+  flex: 1;
+  font-size: 1.2em;
+  line-height: 1.5;
+}
+
+/* Contacto */
+#contacto {
+  padding: 50px;
+  text-align: center;
+}
+
+.socials a {
+  display: inline-block;
+  margin: 10px 15px;
+  padding: 8px 15px;
+  color: #00ffff;
+  border: 1px solid #00ffff;
+  border-radius: 5px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.socials a:hover {
+  background: #ff00ff;
+  border-color: #ff00ff;
+  color: #fff;
+}
+
+/* Footer */
+footer {
+  padding: 20px;
+  text-align: center;
+  background: #000;
+  color: #555;
+}
